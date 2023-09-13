@@ -1,3 +1,6 @@
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+
 export default {
   input: 'electron/build/electron/src/index.js',
   output: [
@@ -6,7 +9,15 @@ export default {
       format: 'cjs',
       sourcemap: true,
       inlineDynamicImports: true,
+      exports: 'named',
     },
   ],
-  external: ['@capacitor/core'],
+  external: [
+    '@capacitor/core',
+    '@fduenascoink/oink-addons',
+    'electron',
+    'path',
+    'fs'
+  ],
+  plugins: [resolve(), commonjs()]
 };

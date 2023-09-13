@@ -19,7 +19,8 @@
     "@capacitor/core": "latest",
     "@capacitor/ios": "^5.0.0",
     "@capacitor/splash-screen": "latest",
-    "@fduenascoink/capacitor-azkoyen": "file:.."
+    "@fduenascoink/capacitor-azkoyen": "file:..",
+    "@fduenascoink/oink-addons": "2.0.0"
   },
   "devDependencies": {
     "@capacitor/cli": "latest",

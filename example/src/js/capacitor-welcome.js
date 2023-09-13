@@ -1,3 +1,4 @@
+import { CapacitorException } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Azkoyen } from '@fduenascoink/capacitor-azkoyen';
 
@@ -107,8 +108,19 @@ window.customElements.define(
         } catch (e) {
           console.warn('User cancelled', e);
         } */
-        const res = await Azkoyen.echo({ value: 'Hola desde electron' });
-        console.log(res);
+        try {
+          const res = await Azkoyen.connect({ value: 'Hola desde electron' });
+          console.log(res);
+        } catch (error) {
+          if (error instanceof CapacitorException) {
+            console.log("es error de capacitor");
+            const { message, code } = error;
+            console.log(`Error con mensaje: ${message} y codigo: ${code}`);
+          }
+          if (error instanceof Error) {
+            console.log(error.message);
+          }
+        }
       });
     }
   }

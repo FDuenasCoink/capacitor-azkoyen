@@ -6,6 +6,12 @@
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
+    },
+    "Azkoyen": {
+      "warnToCritical": 10,
+      "maxCritical": 3,
+      "maximumPorts": 10,
+      "logLevel": 1
     }
   }
 }
