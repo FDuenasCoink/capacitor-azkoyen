@@ -1,10 +1,10 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { AzkoyenPlugin, ChannelData, ChannelInfo, DeviceStatus, ResponseStatus } from './definitions';
+import type { AzkoyenPluginBase, ChannelData, ChannelInfo, DeviceStatus, ResponseStatus } from './definitions';
 import { Validator } from './lib/Validator';
 import { Logger } from './lib/logger';
 
-export class AzkoyenWeb extends WebPlugin implements AzkoyenPlugin {
+export class AzkoyenWeb extends WebPlugin implements AzkoyenPluginBase {
   private static readonly COINK_EVENT = 'coinInsert';
   private logger = new Logger('AZKOYEN');
   private validator = new Validator({

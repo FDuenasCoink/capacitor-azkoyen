@@ -1,9 +1,8 @@
-import type { PluginListenerHandle } from '@capacitor/core';
 import type { IValidator } from '@fduenascoink/oink-addons';
 import { Azkoyen as AzkoyenAddon } from '@fduenascoink/oink-addons';
 import { EventEmitter } from 'events';
 
-import type { AzkoyenPlugin, ChannelData, ChannelInfo, CoinEvent, CoinEventWarning, DeviceStatus, ResponseStatus } from '../../src/definitions';
+import type { AzkoyenPlugin, ChannelData, ChannelInfo, DeviceStatus, ResponseStatus } from '../../src/definitions';
 
 import { CoinChannels } from './channels';
 import type { Runnable } from './threat';
@@ -86,11 +85,11 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin, Runnable {
   async startReader(): Promise<ResponseStatus> {
     this.thread.stop();
     const response = this.azkoyen.startReader();
-    const status = response.statusCode;
+    /* const status = response.statusCode;
     const successStates = [201, 301, 300];
     if (!successStates.includes(status)) {
       throw new PluginError(response.message, response.statusCode);
-    }
+    } */
     this.channels.reset();
     this.thread.start();
     return response;
@@ -153,14 +152,21 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin, Runnable {
     this.emit(Azkoyen.COIN_EVENT, { value });
   }
 
-  addListener(eventName: string, listenerFunc: (event: CoinEvent) => void): this;
-  addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarning) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: any, listenerFunc: any): Promise<PluginListenerHandle> & PluginListenerHandle & this {
-    return super.addListener(eventName, listenerFunc) as any;
-  }
-  removeAllListeners(): Promise<void> & this {
-    return super.removeAllListeners() as any;
+  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  addListener(event: string | symbol, listener: (...args: any[]) => void): any {
+    return super.addListener(event, listener);
   }
 
+  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  removeAllListeners(event?: string | symbol): any {
+    return super.removeAllListeners(event);
+  }
+
+  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  removeListener(event: string | symbol, listener: (...args: any[]) => void): any {
+    return super.removeListener(event, listener);
+  }
 }

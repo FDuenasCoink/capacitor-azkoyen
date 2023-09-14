@@ -5,8 +5,8 @@ export interface Runnable {
 export class Thread {
   private readonly runnable: Runnable;
   private threadRef?: any;
-
   private active = false;
+  private isRunnuing = false;
 
   constructor(runnable: Runnable) {
     this.runnable = runnable;
@@ -16,10 +16,13 @@ export class Thread {
     if (this.threadRef) return;
     this.active = true;
     this.threadRef = setInterval(async () => {
+      if (this.isRunnuing) return;
+      this.isRunnuing = true;
       await this.runnable.run();
-    }, 10);
+      this.isRunnuing = false;
+    }, 30);
   }
-
+  
   stop() {
     this.active = false;
     clearInterval(this.threadRef);
