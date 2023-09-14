@@ -17,3 +17,9 @@ export function getCapacitorElectronConfig(pluginName: string) {
   const pluginConfig = capFileConfig.plugins[pluginName] ?? {};
   return deepClone(pluginConfig as Record<string, any>);
 }
+
+export class PluginError extends Error {
+  constructor(message: string, code: number) {
+    super(`${message} (CÓDIGO ${code})`);
+  }
+}

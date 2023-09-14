@@ -17,7 +17,8 @@ export default {
     '@fduenascoink/oink-addons',
     'electron',
     'path',
-    'fs'
+    'fs',
+    'events',
   ],
   plugins: [resolve(), commonjs()]
 };
