@@ -95,7 +95,7 @@ window.customElements.define(
 
       self.shadowRoot.querySelector('#take-photo').addEventListener('click', async function (e) {
         try {
-          Azkoyen.removeAllListeners();
+          // Azkoyen.removeAllListeners('coinInsert');
           Azkoyen.addListener('coinInsert', console.log);
           const res = await Azkoyen.startReader();
           console.log(res);
