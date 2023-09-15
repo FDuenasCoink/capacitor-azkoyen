@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com.git"
+    "url": "https://github.com/FDuenasCoink/capacitor-azkoyen.git"
   },
   "bugs": {
     "url": "https://github.com/issues"
