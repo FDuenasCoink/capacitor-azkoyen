@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/.cxx/Debug/1f3j336t/x86",
+  "command": "/Users/coink/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android22 --sysroot=/Users/coink/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dandroid_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/android.dir/android.cpp.o -c /Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/cpp/android.cpp",
+  "file": "/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/cpp/android.cpp"
+}
+]

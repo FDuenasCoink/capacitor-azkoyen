@@ -1,0 +1,3 @@
+/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/java/hardware/azkoyen/AzkoyenControl.java
+/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/java/hardware/azkoyen/AzkoyenControlJNI.java
+/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/cpp/azkoyen/AzkoyenControl.i

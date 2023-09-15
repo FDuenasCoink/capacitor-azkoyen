@@ -1,0 +1,18 @@
+# ninja log v5
+1	391	1694811162743136366	spdlog/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o	49f80c3470e312a3
+4	423	1694811162779946336	azkoyen/CMakeFiles/Azkoyen.dir/StateMachine.cpp.o	cd5907b5029507e2
+5	508	1694811162864992547	azkoyen/CMakeFiles/Azkoyen.dir/AzkoyenControl.cpp.o	9b4407a1a8cb3eb5
+1	517	1694811162873688626	spdlog/CMakeFiles/spdlog.dir/src/cfg.cpp.o	52f2436b5fb7409b
+0	646	1694811163000941278	spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o	f14c614a8d5ff998
+1	670	1694811163024653401	spdlog/CMakeFiles/spdlog.dir/src/async.cpp.o	b604cf3f415bbe3a
+0	711	1694811163065837849	spdlog/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o	831593259f414822
+2	723	1694811163077590202	spdlog/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o	48eba9dd62e02bb7
+2	1000	1694811163351566237	azkoyen/CMakeFiles/Azkoyen.dir/ValidatorAzkoyen.cpp.o	5728fd09cdd5de8a
+0	1582	1694811163925428417	spdlog/CMakeFiles/spdlog.dir/src/spdlog.cpp.o	4ffcf4e9217b834
+1582	1608	1694811163967805000	spdlog/libspdlogd.a	104272c8bb76c457
+1608	1694	1694811164020096743	/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/build/intermediates/cxx/Debug/2j572x53/obj/armeabi-v7a/libAzkoyen.so	7194b56f25b1134
+1694	1861	1694811164220968044	/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/java/hardware/azkoyen/AzkoyenControlJAVA_wrap.cxx	ce44c16520b71a2e
+1694	1861	1694811164220968044	/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/java/hardware/azkoyen/AzkoyenControl.java	ce44c16520b71a2e
+1694	1861	1694811164220968044	/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/java/hardware/azkoyen/AzkoyenControlJNI.java	ce44c16520b71a2e
+1861	2198	1694811164555822252	azkoyen/CMakeFiles/Azkoyen_Wrapper.dir/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/src/main/java/hardware/azkoyen/AzkoyenControlJAVA_wrap.cxx.o	fc014152c3bd1424
+2198	2236	1694811164591236854	/Users/coink/Desktop/projects/oink-hardware-plugins/capacitor-azkoyen/android/build/intermediates/cxx/Debug/2j572x53/obj/armeabi-v7a/libAzkoyen_Wrapper.so	a055d36407916e03
