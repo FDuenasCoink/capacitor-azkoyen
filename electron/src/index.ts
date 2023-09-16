@@ -1,4 +1,4 @@
-import type { CoinResult, IValidator, UnsubscribeFunc } from '@fduenascoink/oink-addons';
+import type { CoinResult, IAzkoyen, UnsubscribeFunc } from '@fduenascoink/oink-addons';
 import { Azkoyen as AzkoyenAddon } from '@fduenascoink/oink-addons';
 import { EventEmitter } from 'events';
 
@@ -11,7 +11,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   private static readonly COIN_EVENT = "coinInsert";
   private static readonly COIN_WARNING_EVENT = "coinInsertWarning";
 
-  private azkoyen: IValidator;
+  private azkoyen: IAzkoyen;
   private channels = new CoinChannels();
   private unsubscribeFn?: UnsubscribeFunc;
 
