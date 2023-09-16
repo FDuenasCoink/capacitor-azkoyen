@@ -20,5 +20,13 @@ export default {
     'fs',
     'events',
   ],
-  plugins: [resolve(), commonjs()]
+  plugins: [
+    resolve(), 
+    commonjs({
+      ignoreDynamicRequires: true,
+      dynamicRequireTargets: [
+        'node_modules/@fduenascoink/capacitor-azkoyen/electron/dist/plugin.js'
+      ],
+    }),
+  ],
 };
