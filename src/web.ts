@@ -62,7 +62,7 @@ export class AzkoyenWeb extends WebPlugin implements AzkoyenPluginBase {
       message: "web simulated response",
       aditionalInfo: "",
       priority: 0,
-      date: new Date().toString(),
+      date: new Date().toISOString(),
     }
   }
 

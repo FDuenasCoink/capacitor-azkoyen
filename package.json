@@ -1,6 +1,6 @@
 {
   "name": "@fduenascoink/capacitor-azkoyen",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "Capacitor plugin to control azkoyen validator",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

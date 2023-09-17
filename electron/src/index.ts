@@ -60,7 +60,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
     const status = this.azkoyen.testStatus();
     return {
       ...status,
-      date: new Date().toDateString(),
+      date: new Date().toISOString(),
     };
   }
 
