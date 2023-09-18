@@ -71,6 +71,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   }
 
   async startReader(): Promise<ResponseStatus> {
+    this.unsubscribeFn?.();
     const response = this.azkoyen.startReader();
     const status = response.statusCode;
     const successStates = [201, 301, 300];
@@ -89,6 +90,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
     if (status !== 200 && status !== 301) {
       throw new PluginError(response.message, response.statusCode);
     }
+    this.channels.reset();
     return response;
   }
 
