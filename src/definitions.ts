@@ -87,8 +87,8 @@ export interface AzkoyenPlugin {
   /**
    * Listens for coin read.
    */
-  addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarning) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle | string;
+  addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarning) => void): Promise<PluginListenerHandle> & PluginListenerHandle | string;
   /**
    * Removes all listeners
    */
@@ -96,8 +96,6 @@ export interface AzkoyenPlugin {
 }
 
 export interface AzkoyenPluginElectron extends AzkoyenPlugin {
-  removeListener?(event: string): void & Promise<void>;
+  removeListener?(listenerId: string): void & Promise<void>;
   removeAllListeners(type?: string): void & Promise<void>;
-  addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle & string;
-  addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarning) => void): Promise<PluginListenerHandle> & PluginListenerHandle & string;
 }

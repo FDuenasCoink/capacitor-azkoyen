@@ -141,7 +141,7 @@ Funtion to rest de device.
 ### addListener('coinInsert', ...)
 
 ```typescript
-addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void) => (Promise<PluginListenerHandle> & PluginListenerHandle) | string
 ```
 
 Listens for coin read.
@@ -151,7 +151,7 @@ Listens for coin read.
 | **`eventName`**    | <code>'coinInsert'</code>                                           |
 | **`listenerFunc`** | <code>(event: <a href="#coinevent">CoinEvent</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>string | (Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>)</code>
 
 --------------------
 
@@ -159,7 +159,7 @@ Listens for coin read.
 ### addListener('coinInsertWarning', ...)
 
 ```typescript
-addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarning) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarning) => void) => (Promise<PluginListenerHandle> & PluginListenerHandle) | string
 ```
 
 | Param              | Type                                                                              |
@@ -167,7 +167,7 @@ addListener(eventName: 'coinInsertWarning', listenerFunc: (event: CoinEventWarni
 | **`eventName`**    | <code>'coinInsertWarning'</code>                                                  |
 | **`listenerFunc`** | <code>(event: <a href="#coineventwarning">CoinEventWarning</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>string | (Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a>)</code>
 
 --------------------
 
