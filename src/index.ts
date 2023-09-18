@@ -1,8 +1,8 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { AzkoyenPlugin } from './definitions';
+import type { AzkoyenPluginElectron } from './definitions';
 
-const Azkoyen = registerPlugin<AzkoyenPlugin>('Azkoyen', {
+const Azkoyen = registerPlugin<AzkoyenPluginElectron>('Azkoyen', {
   web: () => import('./web').then(m => new m.AzkoyenWeb()),
   electron: () => (window as any).CapacitorCustomPlatform.plugins.Azkoyen,
 });

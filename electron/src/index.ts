@@ -1,6 +1,8 @@
 import type { CoinResult, IAzkoyen, UnsubscribeFunc } from '@fduenascoink/oink-addons';
 import { Azkoyen as AzkoyenAddon } from '@fduenascoink/oink-addons';
+import { app } from 'electron';
 import { EventEmitter } from 'events';
+import { join } from 'path'
 
 import type { AzkoyenPlugin, ChannelData, ChannelInfo, DeviceStatus, ResponseStatus } from '../../src/definitions';
 
@@ -18,12 +20,13 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   constructor() {
     super();
     const config = getCapacitorElectronConfig('Azkoyen');
+    const logsPath = app.getPath('documents');
     this.azkoyen = new AzkoyenAddon({
       maxCritical: config.maxCritical ?? 3,
       warnToCritical: config.warnToCritical ?? 10,
       maximumPorts: config.maximumPorts ?? 10,
       logLevel: config.logLevel ?? 1,
-      logPath: 'logs/pelicano.log',
+      logPath: join(logsPath, 'logs', 'azkoyen.log'),
     });
   }
 

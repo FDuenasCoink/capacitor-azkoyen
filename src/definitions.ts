@@ -51,7 +51,7 @@ export interface ChannelInfo extends ResponseStatus {
   channels: { [key in Channels]?: boolean };
 }
 
-export interface AzkoyenPluginBase {
+export interface AzkoyenPlugin {
   /**
    * Funtion to activate/deactivate channels
    */
@@ -95,7 +95,7 @@ export interface AzkoyenPluginBase {
   removeAllListeners(): Promise<void>;
 }
 
-export interface AzkoyenPlugin extends AzkoyenPluginBase {
+export interface AzkoyenPluginElectron extends AzkoyenPlugin {
   removeListener?(event: string): void & Promise<void>;
   removeAllListeners(type?: string): void & Promise<void>;
   addListener(eventName: 'coinInsert', listenerFunc: (event: CoinEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle & string;
