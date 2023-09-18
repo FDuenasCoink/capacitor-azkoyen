@@ -26,7 +26,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
       warnToCritical: config.warnToCritical ?? 10,
       maximumPorts: config.maximumPorts ?? 10,
       logLevel: config.logLevel ?? 1,
-      logPath: join(logsPath, 'logs', 'azkoyen.log'),
+      logPath: join(logsPath, 'oink-logs', 'azkoyen.log'),
     });
   }
 
