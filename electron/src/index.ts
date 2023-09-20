@@ -74,7 +74,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   }
 
   async startReader(): Promise<ResponseStatus> {
-    this.unsubscribeFn?.();
+    await this.unsubscribe();
     const response = this.azkoyen.startReader();
     const status = response.statusCode;
     const successStates = [201, 301, 300];
@@ -87,7 +87,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   }
 
   async stopReader(): Promise<ResponseStatus> {
-    this.unsubscribeFn?.();
+    await this.unsubscribe();
     const response = this.azkoyen.stopReader();
     const status = response.statusCode;
     if (status !== 200 && status !== 301) {
@@ -132,7 +132,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
       const value = 0;
       const event = { value, error };
       this.emit(Azkoyen.COIN_EVENT, event);
-      this.unsubscribeFn?.();
+      await this.unsubscribe();
       return
     }
 
@@ -154,4 +154,15 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   removeListener(event: string | symbol, listener: (...args: any[]) => void): any {
     return super.removeListener(event, listener);
   }
+
+  private sleep() {
+    return new Promise(resolve => setTimeout(resolve, 800));
+  }
+
+  private async unsubscribe() {
+    if (!this.unsubscribeFn) return;
+    this.unsubscribeFn();
+    await this.sleep();
+  }
+
 }
