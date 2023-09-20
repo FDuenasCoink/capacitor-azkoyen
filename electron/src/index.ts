@@ -98,6 +98,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   }
 
   async reset(): Promise<ResponseStatus> {
+    await this.unsubscribe();
     const response = this.azkoyen.resetDevice();
     const status = response.statusCode;
     if (status !== 204) {
@@ -106,7 +107,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
     return response;
   }
 
-  async notifyCoin(coin: CoinResult) {
+  private async notifyCoin(coin: CoinResult) {
     const status = coin.statusCode;
     if (status === 303) return;
     
@@ -161,7 +162,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
 
   private async unsubscribe() {
     if (!this.unsubscribeFn) return;
-    this.unsubscribeFn();
+    this.unsubscribeFn?.();
     await this.sleep();
   }
 
