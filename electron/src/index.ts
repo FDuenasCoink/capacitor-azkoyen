@@ -68,9 +68,8 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   }
 
   async init(): Promise<void> {
-    this.connect();
-    this.checkDevice();
-    return;
+    await this.connect();
+    await this.checkDevice();
   }
 
   async startReader(): Promise<ResponseStatus> {
