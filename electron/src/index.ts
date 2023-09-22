@@ -164,6 +164,7 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
     if (!this.unsubscribeFn) return;
     this.unsubscribeFn?.();
     await this.sleep();
+    this.unsubscribeFn = undefined;
   }
 
 }
