@@ -14,7 +14,7 @@ export default {
   ],
   external: [
     '@capacitor/core',
-    '@fduenascoink/oink-addons',
+    '@fduenascoink/azkoyen-addon',
     'electron',
     'path',
     'fs',

@@ -1,5 +1,5 @@
-import type { CoinResult, IAzkoyen, UnsubscribeFunc } from '@fduenascoink/oink-addons';
-import { Azkoyen as AzkoyenAddon } from '@fduenascoink/oink-addons';
+import type { CoinResult, IAzkoyen, UnsubscribeFunc } from '@fduenascoink/azkoyen-addon';
+import { Azkoyen as AzkoyenAddon } from '@fduenascoink/azkoyen-addon';
 import { app } from 'electron';
 import { EventEmitter } from 'events';
 import { join } from 'path'
