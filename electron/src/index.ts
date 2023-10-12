@@ -86,8 +86,15 @@ export class Azkoyen extends EventEmitter implements AzkoyenPlugin {
   }
 
   async stopReader(): Promise<ResponseStatus> {
+    const coins = [50, 100, 200, 500, 1000];
+    coins.forEach((coin) => this.channels.setChannel(coin, false));
+    const { mask1, mask2 } = this.channels.getValue();
+    let response = this.azkoyen.modifyChannels(mask1, mask2);
+    if (response.statusCode !== 203) {
+      throw new PluginError(response.message, response.statusCode);
+    }
     await this.unsubscribe();
-    const response = this.azkoyen.stopReader();
+    response = this.azkoyen.stopReader();
     const status = response.statusCode;
     if (status !== 200 && status !== 301) {
       throw new PluginError(response.message, response.statusCode);
