@@ -96,9 +96,7 @@ window.customElements.define(
       self.shadowRoot.querySelector('#take-photo').addEventListener('click', async function (e) {
         try {
           // Azkoyen.removeAllListeners('coinInsert');
-          Azkoyen.addListener('coinInsert', console.log);
-          const res = await Azkoyen.startReader();
-          console.log(res);
+          await Azkoyen.stopReader();
         } catch (error) {
           if (error instanceof CapacitorException) {
             console.log("es error de capacitor");
